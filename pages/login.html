@@ -3,40 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Client Login - Service Connect</title>
+  <title>Login - Service Connect</title>
   <link rel="stylesheet" href="/Assets/css/styles.css">
+  <link rel="stylesheet" href="/Assets/css/login.css">
 </head>
 <body>
   <!-- Header Section with Navigation -->
   <header>
     <div class="container">
-      <h1>Service Connect</h1>
+      <h1>Service Discovery</h1>
       <nav>
         <ul>
           <li><a href="/pages/index.html">Home</a></li>
-          <li><a href="/pages/client-login.html">Client Login</a></li>
-          <li><a href="/pages/provider-login.html">Provider Login</a></li>
-          <li><a href="/pages/about.html">About</a></li>
-          <li><a href="/pages/contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Client Login Form Section -->
+  <!-- Login Form Section -->
   <section class="login-section">
     <div class="container">
-      <h2>Client Login</h2>
-      <form action="/pages/client-login.php" method="post" class="login-form">
-        <label for="client-email">Email:</label>
-        <input type="email" id="client-email" name="email" required>
-
-        <label for="client-password">Password:</label>
-        <input type="password" id="client-password" name="password" required>
-
+      <h2>Login to Your Account</h2>
+      <form action="/servers/php/login.php" method="POST" class="login-form">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        
+        <label for="role">Role:</label>
+        <select id="role" name="role">
+          <option value="customer">Customer</option>
+          <option value="provider">Service Provider</option>
+          <option value="system_admin">System Administrator</option>
+        </select>
+        
         <button type="submit" class="submitbtn">Login</button>
       </form>
-      <p>Don't have an account? <a href="/pages/index.html">Sign Up</a></p>
+      <p>Don't have an account? <a href="/pages/signup.html">Sign Up</a></p>
     </div>
   </section>
 

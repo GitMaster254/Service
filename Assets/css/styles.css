@@ -12,9 +12,9 @@
     --primary-color-dark: #45a049;
     --secondary-color: #f44336;
     --text-color: #333;
-    --bg-color: #f4f4f9;
+    --bg-color: #3e3ea7;
     --header-bg: #fff;
-    --footer-bg: #333;
+    --footer-bg: #fdfbfb;
     --footer-text: #fff;
     --max-width: 1200px;
     --transition-speed: 0.3s;
@@ -42,7 +42,7 @@
      ========================================================================== */
   header {
     background-color: var(--header-bg);
-    border-bottom: 1px solid #dddada;
+    border-bottom: 1px solid #f7f4f4;
     padding: 20px 0;
   }
   header h1 {
@@ -79,8 +79,8 @@
      Hero Section (Home Page)
      ========================================================================== */
   .hero {
-    background: url('/assets/images/hero-bg.jpg') no-repeat center center/cover;
-    color: #fff;
+    background: url('/assets/images/hero-bg.png') no-repeat center center/cover;
+    color: #0a0a0a;
     padding: 100px 0;
     text-align: center;
   }
@@ -117,46 +117,7 @@
   .how-it-works h2 {
     margin-bottom: 40px;
   }
-  .steps {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  .step {
-    flex: 0 0 30%;
-    background-color: #f9f9f9;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-  }
-  .step h3 {
-    margin-top: 0;
-  }
-  
-  /* ==========================================================================
-     Testimonials Section (Home Page)
-     ========================================================================== */
-  .testimonials {
-    padding: 60px 0;
-    background-color: var(--bg-color);
-    text-align: center;
-  }
-  .testimonials h2 {
-    margin-bottom: 40px;
-  }
-  .testimonial-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  .testimonial-cards .card {
-    flex: 0 0 45%;
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
+ 
   
   /* ==========================================================================
      Login Sections (Client & Provider)
@@ -221,56 +182,6 @@
   .about-section p {
     margin-bottom: 15px;
     text-align: justify;
-  }
-  
-  /* ==========================================================================
-     Contact Page Section
-     ========================================================================== */
-  .contact-section {
-    padding: 60px 0;
-    background-color: #fff;
-    text-align: center;
-  }
-  .contact-section h2 {
-    margin-bottom: 20px;
-  }
-  .contact-form {
-    max-width: 500px;
-    margin: 0 auto;
-    text-align: left;
-  }
-  .contact-form label {
-    display: block;
-    margin: 10px 0 5px;
-    font-weight: bold;
-  }
-  .contact-form input[type="text"],
-  .contact-form input[type="email"],
-  .contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  .contact-form textarea {
-    resize: vertical;
-  }
-  .contact-form button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: var(--primary-color);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    margin-top: 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background var(--transition-speed);
-  }
-  .contact-form button:hover {
-    background-color: var(--primary-color-dark);
   }
   
   /* ==========================================================================

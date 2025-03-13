@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Dashboard</title>
+    <link rel="stylesheet" href="/Assets/css/business.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    
+    <link rel="icon" type="image/png" href="/Assets/images/hero-bg.png">
+</head>
+<body>
+    <div class="head">
+        <!-- <button class="menu-btn">&#9776;</button> -->
+        <!-- <h1>Business Dashboard</h1> -->
+
+        <div class="header">
+            <button id="menu-toggle" class="menu-btn">&#9776;</button>
+            <!-- <h1>Welcome, <span id="username">User</span></h1>  -->
+        </div>
+        <!-- Profile Dropdown -->
+        <div class="profile-container">
+            <button class="profile-btn" id="profile-btn">
+                <img src="/Assets/images/profile1.jpg" alt="User Avatar" id="user-avatar">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="profile-dropdown" id="profile-dropdown">
+                <a href="/profile.html" style="color:black">👤 Profile</a>
+                <a href="/pages/Dashboard/logout.html" style="color:red">↻ Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="/pages/business_dashboard.html" data-section="Dashboard"><i class="fas fa-home"></i> <span class="text">Dashboard</span></a></li>
+            <li><a href="/pages/Dashboard/settings.html" data-section="Settings"><i class="fas fa-cog"></i> <span class="text">Settings</span></a></li>
+            <li><a href="/pages/Dashboard/manage_listings.html" data-section="Manage Listings"><i class="fas fa-list"></i> <span class="text">Manage Listings</span></a></li>
+            <li><a href="/pages/Dashboard/messages.html" data-section="Messages"><i class="fas fa-envelope"></i> <span class="text">Messages</span></a></li>
+        </ul>
+
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+
+        <!-- Dashboard Overview -->
+        <div class="dashboard-cards">
+            <div class="card">
+
+        </div>
+
+        <!-- Business Listings -->
+        <div class="business-listings">
+
+        </div>
+    </div>
+
+    <script src="/Assets/js/business.js"></script>
+</body>
+</html>
