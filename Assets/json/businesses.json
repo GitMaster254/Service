@@ -1,14 +1,8 @@
 [
   {
-    "name": "Farm Fresh",
-    "category": "Agriculture",
-    "image": "/Assets/images/farm-fresh.jpg",
-    "description": "Fresh produce from local farms."
-  },
-  {
-    "name": "Home Repairs Inc.",
-    "category": "Home services",
-    "image": "/Assets/images/home-repairs.jpg",
-    "description": "Professional home repair services."
+    "name": "",
+    "category": "",
+    "image": "",
+    "description": ""
   }
 ]
