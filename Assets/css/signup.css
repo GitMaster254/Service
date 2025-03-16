@@ -15,7 +15,7 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    width: 70%;
     max-width: 400px;
     text-align: center;
 }
@@ -33,7 +33,7 @@ h1 {
 }
 
 label {
-    display: block;
+    display: flex;
     font-weight: bold;
     margin-bottom: 5px;
     color: #555;
@@ -74,4 +74,35 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+.submitbtn{
+    margin-top: 10px;
+    
+}
+  /* Left Side - Background Image */
+  .left-side {
+    flex: 1;
+    background: url('/Service/Assets/images/hero-bg.png') no-repeat center center;
+    background-size: cover;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  }
+    /* Right Side - Login Form */
+.right-side {
+    flex: 1;
+    background: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.container{
+    display: flex;
+    height: 100vh;
 }

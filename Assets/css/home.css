@@ -2,16 +2,16 @@
 body, .whole_body {
   margin: 0;
   padding: 0;
-  width: 100vw;
-  overflow-y: auto;
+  /* width: 100vw;
+  overflow-y: auto; */
 }
 
 .body_wrap {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* height: 100vh;
   width: 100vw;
-  overflow-y: auto;
+  overflow-y: auto; */
 }
 
 .container {
@@ -75,18 +75,7 @@ body, .whole_body {
   border: none;
   cursor: pointer;
 }
-/* User Actions */
-.user-actions {
-  display: flex;
-  gap: 15px;
-}
 
-.user-actions a {
-  text-decoration: none;
-  color: #333;
-  font-size: 16px;
-  padding: 5px 10px;
-}
 
 main {
   padding-top: 70px; /* Adjust padding for header's height */
@@ -106,6 +95,10 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+}
+.user-actions{
+  text-decoration: none;
+  
 }
 
 /* Search and Filter Section */
@@ -130,21 +123,6 @@ body {
   border-color: #007bff;
 }
 
-#category-filter {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  background-color: #fff;
-  cursor: pointer;
-  outline: none;
-  transition: border-color 0.3s ease;
-}
-
-#category-filter:focus {
-  border-color: #007bff;
-}
-
 #search-button {
   padding: 10px 20px;
   background-color: #007bff;
@@ -161,10 +139,12 @@ body {
 }
 
 /* Business List Styles */
-#business-list {
+.service-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
+  background: #f9f9fa;
+  height: 1000px;
 }
 
 /* Responsive Design */
@@ -182,7 +162,6 @@ body {
   }
 
   #search-input,
-  #category-filter,
   #search-button {
     width: 100%; /* Make the input, filter, and button full width on smaller screens */
     max-width: none; /* Remove any max-width restriction */
@@ -192,21 +171,6 @@ body {
     padding-top: 100px; /* Increase the padding to accommodate stacked header */
   }
 
-  /* For footer items in mobile view */
-  .footer-links li {
-    display: block;
-    margin-bottom: 10px;
-  }
-}
-/* Service Listing Section */
-.service-list {
-  padding: 40px 20px;
-  background-color: #f9f9f9;
-}
-
-.service-list h2 {
-  text-align: center;
-  margin-bottom: 20px;
 }
 
 /* Grid Layout */
@@ -217,52 +181,8 @@ body {
   justify-content: center;
 }
 
-/* Service Card */
-.service-card {
-  background: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-}
-
-.service-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.service-card .service-info {
-  padding: 15px;
-  text-align: center;
-}
-
-.service-card h3 {
-  font-size: 18px;
-  margin-bottom: 8px;
-}
-
-.service-card p {
-  font-size: 14px;
-  color: #555;
-}
-
-.service-card .service-btn {
-  display: block;
-  width: 100%;
+.site-footer{
+  background: #828563;
+  margin: 0px;
   padding: 10px;
-  background: #007bff;
-  color: white;
-  text-align: center;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.service-card .service-btn:hover {
-  background: #0056b3;
 }

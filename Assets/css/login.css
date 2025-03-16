@@ -12,9 +12,9 @@
   /* Left Side - Background Image */
   .left-side {
     flex: 1;
-    background: url('/Assets/images/university.jpg') no-repeat center center;
+    background: url('/Service/Assets/images/hero-bg.png') no-repeat center center;
     background-size: cover;
-    display: flex;
+    display: flex; 
     align-items: center;
     justify-content: center;
     color: white;
@@ -98,4 +98,7 @@
 
   .signup-text a:hover {
     text-decoration: underline;
+  }
+  .remember-forgot{
+    padding: 10px;
   }
