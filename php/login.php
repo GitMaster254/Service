@@ -1,46 +1,56 @@
 <?php
-session_start(); // Start session to track user login
+session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_regenerate_id(true); // Secure session handling
+}
 
-require 'conn.php'; // Database connection
+require 'conn.php'; // Ensure you have a proper database connection
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $email = trim($_POST['email']);
+    $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
     $password = trim($_POST['password']);
-    $role = trim($_POST['role']);
+    $role = htmlspecialchars(trim($_POST['role']), ENT_QUOTES, 'UTF-8');
 
-    // Check if all fields are filled
+    // Validate input
     if (empty($email) || empty($password) || empty($role)) {
         $_SESSION['error'] = "All fields are required.";
         header("Location: /Service/pages/Home/login.html");
         exit();
     }
 
+    // Validate role
+    $allowed_roles = ["Customer", "Business Owner"];
+    if (!in_array($role, $allowed_roles)) {
+        $_SESSION['error'] = "Invalid role selected.";
+        header("Location: /Service/pages/Home/login.html");
+        exit();
+    }
+
     try {
-        // Prepare SQL statement
+        // Prepare and execute SQL query
         $stmt = $conn->prepare("SELECT id, email, password, role FROM users WHERE email = ? AND role = ?");
         $stmt->execute([$email, $role]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC); // Fetch the user
 
+        // Check if user exists and verify password
+        if ($user && password_verify($password, $user['password'])) {
+            // Secure session storage
+            $_SESSION['id'] = (int) $user['id'];
+            $_SESSION['email'] = $user['email'];
+            $_SESSION['role'] = $user['role'];
 
-        if ($stmt->rowCount() > 0) {
-            $user = $stmt->fetch(PDO::FETCH_ASSOC);
-            // Verify password
-            if (password_verify($password, $user['password'])) {
-                // Set session variables
-                $_SESSION['id'] = $user['id'];
-                $_SESSION['email'] = $user['email'];
-                $_SESSION['role'] = $user['role'];
-
-                // Redirect based on role
-                $redirectpage = ($user['role'] === 'Customer') ? '/Service/pages/Home/index.html' : '/Service/pages/Dashboard/index.html';
-                header("Location: $redirectpage");
-                exit();
-            } else {
-                $_SESSION['error'] = "Incorrect email or password.";
+            // Redirect based on role
+            if ($user['role'] === "Customer") {
+                header("Location: /Service/pages/Customer/profile.html");
+            } elseif ($user['role'] === "Business Owner") {
+                header("Location: /Service/pages/Dashboard/index.html");
             }
+            exit();
         } else {
-            $_SESSION['error'] = "No account found for this email and role.";
+            $_SESSION['error'] = "Incorrect email or password.";
         }
     } catch (PDOException $e) {
+        error_log("Login Error: " . $e->getMessage()); // Log error for debugging
         $_SESSION['error'] = "An error occurred. Please try again later.";
     }
 
